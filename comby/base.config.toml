@@ -1,0 +1,30 @@
+[delete_paren_content]
+match='(:[1])'
+rewrite='()'
+rule='where nested'
+
+[delete_brace_content]
+match='{:[1]}'
+rewrite='{}'
+rule='where nested'
+
+# Helps put blank bodies across newlines on the same line for line deletion.
+[blank_brace]
+match='{ }'
+rewrite='{}'
+
+[delete_line]
+match=':[x\n]'
+rewrite=''
+
+[delete_string_content]
+match='":[x]"'
+rewrite='""'
+
+[remove_first_paren_element]
+match='(:[1],:[2])'
+rewrite='(:[2])'
+[delete_paren_contents]
+match='(:[1])'
+rewrite='()'
+rule='where nested'
